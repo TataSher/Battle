@@ -1,3 +1,11 @@
-<h1><%= @name_1 %> vs. <%= @name_2 %></h1>
+<h1><%= $player_1.name %> vs. <%= $player_2.name %></h1>
 <h1>FIGHT!!!</h1>
-<h1><%= @name_2 %> - 10000 HIT POINTS!</h1>
+<h1><%= $player_2.name %> - 10000 HIT POINTS!</h1>
+
+<form action="/attack" method='post'>
+  <input type="submit" value="Attack">
+</form>
+
+<% if session[:attack] %>
+  <h1><%= $player_2.name %> was attacked by <%= $player_1.name %></h1>
+<% end %>
