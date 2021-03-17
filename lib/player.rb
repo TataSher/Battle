@@ -3,8 +3,8 @@ class Player
     @name = name
     @hp = hp
   end
-  
-  def attack
+
+  def hit
     @hp =  @hp - 10
   end
 

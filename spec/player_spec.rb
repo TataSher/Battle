@@ -8,9 +8,9 @@ describe Player do
     end
   end
 
-  describe '#attack' do
+  describe '#attacked' do
     it 'takes away HP' do
-      expect { test_player.attack }.to change { test_player.hp }.by(-10)
+      expect { test_player.hit }.to change { test_player.hp }.by(-10)
     end
   end
 end
