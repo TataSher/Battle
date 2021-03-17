@@ -1,11 +1,16 @@
-<h1><%= $player_1.name %> vs. <%= $player_2.name %></h1>
+<h1><%= $game_session.player_1.name %> vs. <%= $game_session.player_2.name %></h1>
 <h1>FIGHT!!!</h1>
-<h1><%= $player_2.name %> - <%= $player_2.hp %>  HIT POINTS!</h1>
+<h1><%= $game_session.player_1.name %> - <%= $game_session.player_1.hp %>  HIT POINTS!</h1>
+<h1><%= $game_session.player_2.name %> - <%= $game_session.player_2.hp %>  HIT POINTS!</h1>
+<h1></h1>
+
+<% if session[:attack] %>
+  <h1><%= $target.name %> was attacked by <%= $game_session.turn %></h1>
+  <% $game_session.change_turn %>
+<% end %>
+
+<h1><%= $game_session.turn %> Turn:</h1>
 
 <form action="/attack" method='post'>
   <input type="submit" value="Attack">
 </form>
-
-<% if session[:attack] %>
-  <h1><%= $player_2.name %> was attacked by <%= $player_1.name %></h1>
-<% end %>
