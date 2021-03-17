@@ -7,4 +7,10 @@ describe Player do
       expect(test_player.name).to eq 'Nata'
     end
   end
+
+  describe '#attack' do
+    it 'takes away HP' do
+      expect { test_player.attack }.to change { test_player.hp }.by(-10)
+    end
+  end
 end

@@ -20,6 +20,7 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     session[:attack] = true
+    $player_2.attack
     redirect '/play'
   end
 end
